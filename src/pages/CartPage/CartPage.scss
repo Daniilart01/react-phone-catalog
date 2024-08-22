@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.CartPage {
+  @include contentPaddingInline;
+  @include maxWidth;
+  @include grid;
+
+  margin-block: 40px;
+
+  &__title {
+    grid-row: 2;
+    padding-bottom: 8px;
+  }
+
+  &__total {
+    grid-column: 17/-1;
+    grid-row: 3/span 2;
+  }
+
+  &__empty {
+    font-size: 24px;
+    color: $primary-color;
+    letter-spacing: -0.5px;
+
+    grid-row: 3;
+    grid-column: 1/-1;
+  }
+}
+
+.cart-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cart-item-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s,
+    opacity 0.3s;
+}

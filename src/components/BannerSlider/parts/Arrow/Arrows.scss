@@ -1,0 +1,10 @@
+.banner-slider {
+  &__arrow {
+    flex: 1;
+
+    &--prev,
+    &--next {
+      height: 100%;
+    }
+  }
+}

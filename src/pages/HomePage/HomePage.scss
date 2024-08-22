@@ -1,0 +1,12 @@
+@import "../../styles/mixins.scss";
+
+.home-page {
+  @include contentPaddingInline;
+  @include maxWidth;
+
+  padding-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}

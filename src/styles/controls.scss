@@ -1,0 +1,204 @@
+.primary-button {
+  box-sizing: border-box;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  transition: all 0.2s;
+  height: 40px;
+  width: 176px;
+
+  &:hover {
+    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &.wide {
+    min-width: 263px;
+    min-height: 48px;
+  }
+
+  &.selected {
+    color: $green-color;
+    border-color: $elements-color;
+    background-color: transparent;
+  }
+}
+
+.simple-button {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #b4bdc3;
+  width: 32px;
+  height: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.2s;
+
+  &.slider-left {
+    background-image: url("images/icons/arrow-left.svg");
+  }
+
+  &.slider-right {
+    background-image: url("images/icons/arrow-right.svg");
+  }
+
+  &.arrow-up {
+    background-image: url("images/icons/arrow-up.svg");
+  }
+
+  &.favourite {
+    min-width: 40px;
+    min-height: 40px;
+    aspect-ratio: 1/1;
+    background-image: url("images/icons/heart.svg");
+
+    &.selected {
+      background-image: url("images/icons/heart-filled.svg");
+      animation: scaleAnimation 0.6s ease-in-out;
+
+      @keyframes scaleAnimation {
+        0% {
+          background-size: 50%;
+        }
+
+        25% {
+          background-size: 80%;
+        }
+
+        50% {
+          background-size: 50%;
+        }
+
+        75% {
+          background-size: 80%;
+        }
+
+        100% {
+          background-size: 50%;
+        }
+      }
+    }
+  }
+
+  &.with-background {
+    background-color: #fff;
+  }
+
+  &.slider-right:disabled,
+  &.slider-left:disabled {
+    border-color: $elements-color;
+  }
+
+  &.slider-left:disabled {
+    background-image: url("images/icons/arrow-left-grey.svg");
+  }
+
+  &.slider-right:disabled {
+    background-image: url("images/icons/arrow-right-grey.svg");
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:active {
+    background-color: rgb(240, 240, 240);
+  }
+}
+
+.dropdown {
+  position: relative;
+
+  &-button {
+    height: 40px;
+    width: 176px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: transparent;
+    border: 1px solid $icons-color;
+    box-sizing: border-box;
+    padding-inline: 12px;
+  }
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  &-text {
+    color: $primary-color;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &-arrow {
+    transition: transform 0.3s;
+
+    &.rotate {
+      transform: scaleY(-1);
+    }
+  }
+
+  &-content {
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 44px;
+
+    z-index: 1;
+    border: 1px solid $elements-color;
+    background-color: white;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+
+    transition: all 0.2s;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.show {
+      visibility: visible;
+      overflow-y: scroll;
+      max-height: 350%;
+    }
+  }
+
+  &-item {
+    color: $secondary-color;
+    text-align: left;
+    padding-left: 12px;
+    padding-block: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    border: none;
+
+    transition: color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+}
