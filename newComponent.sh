@@ -14,10 +14,10 @@ mkdir -p $ComponentDirectory
 # Создаем файлы
 touch "$ComponentDirectory/$ComponentName.tsx"
 touch "$ComponentDirectory/$ComponentName.scss"
-touch "$ComponentDirectory/index.js"
+touch "$ComponentDirectory/index.d.ts"
 
-# Вставляем код в index.js
-echo "export * from './$ComponentName';" > "$ComponentDirectory/index.js"
+# Вставляем код в index.d.ts
+echo "export * from './$ComponentName';" > "$ComponentDirectory/index.d.ts"
 
 # Вставляем код в .tsx
 echo "import './$ComponentName.scss';

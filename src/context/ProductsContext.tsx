@@ -31,7 +31,11 @@ const defaultValue: ContextType = {
 
 export const ProductsContext = createContext(defaultValue);
 
-export const ProductsProvider: React.FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const ProductsProvider: React.FC<Props> = ({ children }) => {
   const [products, setProducts] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [favourites, setFavourites]

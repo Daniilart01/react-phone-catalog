@@ -46,7 +46,12 @@ const defaultContextData: BannerSliderContextData = {
 export const BannerSLiderContext
   = createContext<BannerSliderContextData>(defaultContextData);
 
-export const BannerSliderProvider: React.FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+
+export const BannerSliderProvider: React.FC<Props> = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(images[0]);
   const [transitionDuration, setTransitionDuration]
     = useState(TRANSITION_DURATION);
