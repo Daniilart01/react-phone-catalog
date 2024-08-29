@@ -14,7 +14,6 @@ dist-ssr
 
 # Editor directories and files
 eslint.config.js
-package-lock.json
 .vscode/*
 !.vscode/extensions.json
 .idea
