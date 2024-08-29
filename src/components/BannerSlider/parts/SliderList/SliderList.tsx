@@ -11,11 +11,11 @@ export const SliderList = () => {
   } = useContext(BannerSLiderContext);
 
   const list = [
-    { id: 2, url: '_new/img/banner-accessories.png' },
-    { id: 0, url: '_new/img/banner-phones.png' },
-    { id: 1, url: '_new/img/banner-tablets.png' },
-    { id: 2, url: '_new/img/banner-accessories.png' },
-    { id: 0, url: '_new/img/banner-phones.png' },
+    { id: 2, url: './new/img/banner-accessories.png' },
+    { id: 0, url: './new/img/banner-phones.png' },
+    { id: 1, url: './new/img/banner-tablets.png' },
+    { id: 2, url: './new/img/banner-accessories.png' },
+    { id: 0, url: './new/img/banner-phones.png' },
   ];
 
   return (
